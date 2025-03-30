@@ -3,18 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
 import 'package:invia_hotel_booking/core/router/app_router.dart';
 import 'package:invia_hotel_booking/core/theme/theme.dart';
+import 'package:invia_hotel_booking/di/injection.dart';
 import 'package:invia_hotel_booking/l10n/l10n.dart';
 
 void main() {
-  final appRouter = AppRouter();
-  runApp(MyApp(appRouter: appRouter));
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key, required AppRouter appRouter})
-    : _appRouter = appRouter;
+  MyApp({super.key});
 
-  final AppRouter _appRouter;
+  final AppRouter _appRouter = getIt<AppRouter>();
 
   @override
   Widget build(BuildContext context) {

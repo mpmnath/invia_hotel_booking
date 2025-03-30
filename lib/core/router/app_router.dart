@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:injectable/injectable.dart';
 import 'package:invia_hotel_booking/features/account/presentation/pages/account_page.dart';
 import 'package:invia_hotel_booking/features/favorites/presentation/pages/favorites_page.dart';
 import 'package:invia_hotel_booking/features/hotels/presentation/pages/hotels_page.dart';
@@ -7,6 +8,7 @@ import 'package:invia_hotel_booking/main.dart';
 
 part 'app_router.gr.dart';
 
+@singleton
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
 class AppRouter extends RootStackRouter {
   @override
