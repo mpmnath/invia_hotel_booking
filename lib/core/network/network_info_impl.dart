@@ -4,14 +4,15 @@ import 'network_info.dart';
 
 @LazySingleton(as: NetworkInfo)
 class NetworkInfoImpl implements NetworkInfo {
-  final Connectivity connectionChecker;
+  final Connectivity _connectionChecker;
 
-  NetworkInfoImpl(this.connectionChecker);
+  NetworkInfoImpl({required Connectivity connectionChecker})
+    : _connectionChecker = connectionChecker;
 
   @override
   Future<bool> get isConnected async {
     final List<ConnectivityResult> connectivityResult =
-        await connectionChecker.checkConnectivity();
+        await _connectionChecker.checkConnectivity();
     return connectivityResult.isNotEmpty &&
         connectivityResult[0] != ConnectivityResult.none;
   }

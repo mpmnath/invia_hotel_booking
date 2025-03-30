@@ -8,7 +8,7 @@ import 'package:invia_hotel_booking/core/api/interceptors/error_interceptor.dart
 class ApiClientImpl implements ApiClient {
   final Dio _dio;
 
-  ApiClientImpl() : _dio = Dio() {
+  ApiClientImpl({required Dio dio}) : _dio = dio{
     _dio.options = BaseOptions(
       baseUrl: ApiConstants.baseUrl,
       connectTimeout: Duration(milliseconds: ApiConstants.connectTimeout),
