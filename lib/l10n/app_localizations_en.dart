@@ -39,4 +39,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get serverError => 'Server error. Please try again later.';
+
+  @override
+  String get cacheError => 'Cache error';
 }

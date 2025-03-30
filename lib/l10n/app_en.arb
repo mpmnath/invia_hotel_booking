@@ -53,5 +53,10 @@
   "serverError": "Server error. Please try again later.",
   "@serverError": {
     "description": "Message shown when there is a server error"
+  },
+
+  "cacheError": "Cache error",
+  "@cacheError": {
+    "description": "Message shown when there is a cache error"
   }
 }

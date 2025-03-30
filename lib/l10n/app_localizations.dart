@@ -152,6 +152,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Server error. Please try again later.'**
   String get serverError;
+
+  /// Message shown when there is a cache error
+  ///
+  /// In en, this message translates to:
+  /// **'Cache error'**
+  String get cacheError;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
