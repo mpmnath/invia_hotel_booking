@@ -21,7 +21,6 @@ class AppRouter extends RootStackRouter {
         AutoRoute(path: 'account', page: AccountRoute.page),
       ],
     ),
-    // AutoRoute(path: '/hotel/:id', page: HomeRoute.page),
     RedirectRoute(path: '*', redirectTo: '/'),
   ];
 }

@@ -1,0 +1,57 @@
+{
+  "appTitle": "Hotel Booking",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  
+  "overview": "Overview",
+  "@overview": {
+    "description": "Bottom navigation label for overview tab"
+  },
+  
+  "hotels": "Hotels",
+  "@hotels": {
+    "description": "Bottom navigation label for hotels tab"
+  },
+  
+  "favorites": "Favorites",
+  "@favorites": {
+    "description": "Bottom navigation label for favorites tab"
+  },
+  
+  "account": "Account",
+  "@account": {
+    "description": "Bottom navigation label for account tab"
+  },
+  
+  "noFavorites": "No favorite hotels yet",
+  "@noFavorites": {
+    "description": "Text shown when no favorites are available"
+  },
+  
+  "pricePerNight": "${price}/night",
+  "@pricePerNight": {
+    "description": "Price per night for hotel",
+    "placeholders": {
+      "price": {
+        "type": "String",
+        "example": "$120"
+      }
+    }
+  },
+  
+  "tryAgain": "Try Again",
+  "@tryAgain": {
+    "description": "Button text to retry an action"
+  },
+  
+  "networkError": "No internet connection. Please check your network settings.",
+  "@networkError": {
+    "description": "Message shown when there is no internet connection"
+  },
+  
+  "serverError": "Server error. Please try again later.",
+  "@serverError": {
+    "description": "Message shown when there is a server error"
+  }
+}
