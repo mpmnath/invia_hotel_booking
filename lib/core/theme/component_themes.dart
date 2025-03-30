@@ -10,8 +10,8 @@ class HotelBookingComponentThemes {
       shadowColor: colors.shadow,
       titleTextStyle: TextStyle(
         fontFamily: 'OpenSans',
-        fontSize: 20,
-        fontWeight: FontWeight.w600,
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
         color: colors.foreground,
       ),
     );
