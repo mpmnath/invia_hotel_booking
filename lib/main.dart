@@ -1,14 +1,28 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
 import 'package:invia_hotel_booking/core/router/app_router.dart';
+import 'package:invia_hotel_booking/core/services/hive_service.dart';
 import 'package:invia_hotel_booking/core/theme/theme.dart';
 import 'package:invia_hotel_booking/di/injection.dart';
+import 'package:invia_hotel_booking/features/favorites/presentation/cubits/favorites_cubit.dart';
+import 'package:invia_hotel_booking/features/hotels/presentation/cubits/hotels_cubit.dart';
 import 'package:invia_hotel_booking/l10n/l10n.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  // Ensure Flutter is initialized
   WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies();
+
+  // Initialize Hive
+  await Hive.initFlutter();
+
+  // Register Hive Adapters
+  HiveInitializer.registerAdapters();
+
+  // Dependency Injection Setup
+  await configureDependencies();
   runApp(MyApp());
 }
 
@@ -62,39 +76,47 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      routes: _routes,
-      appBarBuilder: (context, tabsRouter) {
-        return AppBar(
-          title: Text(_appBarTitles(context)[tabsRouter.activeIndex]),
-        );
-      },
-      bottomNavigationBuilder: (context, tabsRouter) {
-        return BottomNavigationBar(
-          currentIndex: tabsRouter.activeIndex,
-          onTap: tabsRouter.setActiveIndex,
-          type: BottomNavigationBarType.fixed,
-          elevation: 1,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: context.l10n.overview,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.hotel),
-              label: context.l10n.hotels,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: context.l10n.favorites,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-              label: context.l10n.account,
-            ),
-          ],
-        );
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt<HotelsCubit>()..getHotels()),
+        BlocProvider(
+          create: (context) => getIt<FavoritesCubit>(),
+        ),
+      ],
+      child: AutoTabsScaffold(
+        routes: _routes,
+        appBarBuilder: (context, tabsRouter) {
+          return AppBar(
+            title: Text(_appBarTitles(context)[tabsRouter.activeIndex]),
+          );
+        },
+        bottomNavigationBuilder: (context, tabsRouter) {
+          return BottomNavigationBar(
+            currentIndex: tabsRouter.activeIndex,
+            onTap: tabsRouter.setActiveIndex,
+            type: BottomNavigationBarType.fixed,
+            elevation: 1,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: context.l10n.overview,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.hotel),
+                label: context.l10n.hotels,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite),
+                label: context.l10n.favorites,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle),
+                label: context.l10n.account,
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
