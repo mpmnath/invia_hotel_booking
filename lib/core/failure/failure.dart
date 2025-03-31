@@ -18,3 +18,9 @@ class CacheFailure extends Failure {
 
   CacheFailure(this.message);
 }
+
+class StreamFailure extends Failure {
+  final String message;
+
+  StreamFailure(this.message);
+}

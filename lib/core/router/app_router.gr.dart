@@ -1,4 +1,3 @@
-// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -14,7 +13,10 @@ part of 'app_router.dart';
 /// [AccountPage]
 class AccountRoute extends PageRouteInfo<void> {
   const AccountRoute({List<PageRouteInfo>? children})
-    : super(AccountRoute.name, initialChildren: children);
+      : super(
+          AccountRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'AccountRoute';
 
@@ -30,7 +32,10 @@ class AccountRoute extends PageRouteInfo<void> {
 /// [FavoritesPage]
 class FavoritesRoute extends PageRouteInfo<void> {
   const FavoritesRoute({List<PageRouteInfo>? children})
-    : super(FavoritesRoute.name, initialChildren: children);
+      : super(
+          FavoritesRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'FavoritesRoute';
 
@@ -46,7 +51,10 @@ class FavoritesRoute extends PageRouteInfo<void> {
 /// [HomePage]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
-    : super(HomeRoute.name, initialChildren: children);
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'HomeRoute';
 
@@ -62,7 +70,10 @@ class HomeRoute extends PageRouteInfo<void> {
 /// [HotelsPage]
 class HotelsRoute extends PageRouteInfo<void> {
   const HotelsRoute({List<PageRouteInfo>? children})
-    : super(HotelsRoute.name, initialChildren: children);
+      : super(
+          HotelsRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'HotelsRoute';
 
@@ -78,7 +89,10 @@ class HotelsRoute extends PageRouteInfo<void> {
 /// [OverviewPage]
 class OverviewRoute extends PageRouteInfo<void> {
   const OverviewRoute({List<PageRouteInfo>? children})
-    : super(OverviewRoute.name, initialChildren: children);
+      : super(
+          OverviewRoute.name,
+          initialChildren: children,
+        );
 
   static const String name = 'OverviewRoute';
 
