@@ -4,8 +4,8 @@ import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/error/exceptions.dart';
 import 'package:invia_hotel_booking/core/failure/failure.dart';
 import 'package:invia_hotel_booking/core/network/network_info.dart';
-import 'package:invia_hotel_booking/features/hotels/data/data_source/hotels_remote_data_source.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/hotel_model.dart';
+import 'package:invia_hotel_booking/features/hotels/data/datasources/hotels_remote_datasource.dart';
+import 'package:invia_hotel_booking/core/data/models/hotel_model.dart';
 import 'package:invia_hotel_booking/features/hotels/domain/repositories/hotels_repository.dart';
 
 @LazySingleton(as: HotelsRepository)

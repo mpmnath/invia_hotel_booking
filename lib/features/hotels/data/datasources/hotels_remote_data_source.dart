@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart';
 import 'package:invia_hotel_booking/core/api/api_client.dart';
 import 'package:invia_hotel_booking/core/api/api_constants.dart';
 import 'package:invia_hotel_booking/core/error/exceptions.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/hotel_model.dart';
+import 'package:invia_hotel_booking/core/data/models/hotel_model.dart';
 
 abstract class HotelsRemoteDataSource {
   /// Fetches a list of hotels from the API
