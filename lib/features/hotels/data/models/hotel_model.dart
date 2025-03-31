@@ -12,7 +12,7 @@ class HotelModel {
   final String hotelId;
   final String name;
   final String destination;
-  final double category;
+  final int category;
   @JsonKey(name: 'category-type')
   final String categoryType;
   final double latitude;

@@ -5,11 +5,11 @@ part 'room_groups_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.kebab)
 class RoomGroupsModel {
-  final List<String> attributes;
+  final List<dynamic> attributes;
   final String boarding;
   final String name;
   @JsonKey(name: 'detailed-description')
-  final String detailedDescription;
+  final String? detailedDescription;
   @JsonKey(name: 'group-identifier')
   final String groupIdentifier;
   final int quantity;
@@ -18,7 +18,7 @@ class RoomGroupsModel {
     required this.attributes,
     required this.boarding,
     required this.name,
-    required this.detailedDescription,
+    this.detailedDescription,
     required this.groupIdentifier,
     required this.quantity,
   });
@@ -33,7 +33,7 @@ class RoomGroupsModel {
       attributes: attributes,
       boarding: boarding,
       name: name,
-      detailedDescription: detailedDescription,
+      detailedDescription: detailedDescription ?? '',
       groupIdentifier: groupIdentifier,
       quantity: quantity,
     );

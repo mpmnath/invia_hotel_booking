@@ -7,8 +7,7 @@ part of 'overall_model.dart';
 // **************************************************************************
 
 OverallModel _$OverallModelFromJson(Map<String, dynamic> json) => OverallModel(
-  attributes:
-      (json['attributes'] as List<dynamic>).map((e) => e as String).toList(),
+  attributes: json['attributes'] as List<dynamic>,
   boarding: json['boarding'] as String,
   name: json['name'] as String,
   adultCount: (json['adult-count'] as num).toInt(),

@@ -10,7 +10,7 @@ HotelModel _$HotelModelFromJson(Map<String, dynamic> json) => HotelModel(
   hotelId: json['hotel-id'] as String,
   name: json['name'] as String,
   destination: json['destination'] as String,
-  category: (json['category'] as num).toDouble(),
+  category: (json['category'] as num).toInt(),
   categoryType: json['category-type'] as String,
   latitude: (json['latitude'] as num).toDouble(),
   longitude: (json['longitude'] as num).toDouble(),

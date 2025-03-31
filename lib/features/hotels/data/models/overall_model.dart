@@ -5,7 +5,7 @@ part 'overall_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.kebab)
 class OverallModel {
-  final List<String> attributes;
+  final List<dynamic> attributes;
   final String boarding;
   final String name;
   @JsonKey(name: 'adult-count')
