@@ -16,4 +16,6 @@ class ApiConstants {
   static const int forbiddenCode = 403;
   static const int notFoundCode = 404;
   static const int serverErrorCode = 500;
+
+  static String get baseUrlWithHotelsEndpoint => '$baseUrl$hotelsEndpoint';
 }
