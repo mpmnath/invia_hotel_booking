@@ -34,7 +34,7 @@ class Rooms {
 }
 
 class Overall {
-  final List<String> attributes;
+  final List<dynamic> attributes;
   final String boarding;
   final String name;
   final int adultCount;
@@ -78,7 +78,7 @@ class PricesAndOccupancy {
 }
 
 class RoomGroups {
-  final List<String> attributes;
+  final List<dynamic> attributes;
   final String boarding;
   final String name;
   final String detailedDescription;
@@ -143,7 +143,7 @@ class Hotel extends Equatable {
   final String id;
   final String name;
   final String destination;
-  final double category;
+  final int category;
   final String categoryType;
   final double latitude;
   final double longitude;
