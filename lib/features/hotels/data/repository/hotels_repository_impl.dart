@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/error/exceptions.dart';
 import 'package:invia_hotel_booking/core/failure/failure.dart';
 import 'package:invia_hotel_booking/core/network/network_info.dart';
 import 'package:invia_hotel_booking/features/hotels/data/data_source/hotels_remote_data_source.dart';
 import 'package:invia_hotel_booking/features/hotels/data/models/hotel_model.dart';
-import 'package:invia_hotel_booking/features/hotels/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/features/hotels/domain/repositories/hotels_repository.dart';
 
 @LazySingleton(as: HotelsRepository)

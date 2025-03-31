@@ -1,7 +1,7 @@
+import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/features/hotels/data/models/overall_model.dart';
 import 'package:invia_hotel_booking/features/hotels/data/models/price_and_occupancy_model.dart';
 import 'package:invia_hotel_booking/features/hotels/data/models/room_groups_model.dart';
-import 'package:invia_hotel_booking/features/hotels/domain/entities/hotel.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'rooms_model.g.dart';
