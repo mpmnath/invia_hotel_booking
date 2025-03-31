@@ -7,12 +7,13 @@ import 'package:invia_hotel_booking/features/hotels/domain/repositories/hotels_r
 
 @lazySingleton
 class GetHotelsUseCase implements UseCase<List<Hotel>, NoParams> {
-  final HotelsRepository repository;
+  final HotelsRepository _repository;
 
-  GetHotelsUseCase(this.repository);
+  GetHotelsUseCase({required HotelsRepository repository})
+    : _repository = repository;
 
   @override
   Future<Either<Failure, List<Hotel>>> call(NoParams params) {
-    return repository.getHotels();
+    return _repository.getHotels();
   }
 }
