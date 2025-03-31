@@ -1,26 +1,38 @@
+import 'package:hive/hive.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/best_offer_model.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/image_model.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/rating_model.dart';
+import 'package:invia_hotel_booking/core/data/models/best_offer_model.dart';
+import 'package:invia_hotel_booking/core/data/models/image_model.dart';
+import 'package:invia_hotel_booking/core/data/models/rating_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'hotel_model.g.dart';
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.kebab)
+@HiveType(typeId: 0)
 class HotelModel {
   @JsonKey(name: 'hotel-id')
+  @HiveField(0)
   final String hotelId;
+  @HiveField(1)
   final String name;
+  @HiveField(2)
   final String destination;
+  @HiveField(3)
   final int category;
   @JsonKey(name: 'category-type')
+  @HiveField(4)
   final String categoryType;
+  @HiveField(5)
   final double latitude;
+  @HiveField(6)
   final double longitude;
+  @HiveField(7)
   final List<ImageModel> images;
   @JsonKey(name: 'rating-info')
+  @HiveField(8)
   final RatingModel rating;
   @JsonKey(name: 'best-offer')
+  @HiveField(9)
   final BestOfferModel bestOffer;
 
   HotelModel({

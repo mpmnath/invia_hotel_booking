@@ -1,17 +1,22 @@
+import 'package:hive/hive.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/overall_model.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/price_and_occupancy_model.dart';
-import 'package:invia_hotel_booking/features/hotels/data/models/room_groups_model.dart';
+import 'package:invia_hotel_booking/core/data/models/overall_model.dart';
+import 'package:invia_hotel_booking/core/data/models/price_and_occupancy_model.dart';
+import 'package:invia_hotel_booking/core/data/models/room_groups_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'rooms_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.kebab)
+@HiveType(typeId: 5)
 class RoomsModel {
+  @HiveField(0)
   final OverallModel overall;
   @JsonKey(name: 'prices-and-occupancy')
+  @HiveField(1)
   final List<PricesAndOccupancyModel> pricesAndOccupancy;
   @JsonKey(name: 'room-groups')
+  @HiveField(2)
   final List<RoomGroupsModel> roomGroups;
 
   RoomsModel({

@@ -1,11 +1,15 @@
+import 'package:hive/hive.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'image_model.g.dart';
 
 @JsonSerializable()
+@HiveType(typeId: 1)
 class ImageModel {
+  @HiveField(0)
   final String large;
+  @HiveField(1)
   final String small;
 
   ImageModel({required this.large, required this.small});
@@ -16,7 +20,7 @@ class ImageModel {
       _$ImageModelFromJson(json);
 
   Image toEntity() => Image(large: large, small: small);
-  
+
   factory ImageModel.fromEntity(Image? image) {
     if (image == null) {
       return ImageModel(large: '', small: '');

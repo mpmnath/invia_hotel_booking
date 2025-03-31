@@ -1,16 +1,22 @@
+import 'package:hive/hive.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'rating_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.kebab)
+@HiveType(typeId: 2)
 class RatingModel {
+  @HiveField(0)
   final double score;
   @JsonKey(name: 'score-description')
+  @HiveField(1)
   final String scoreDescription;
   @JsonKey(name: 'reviews-count')
+  @HiveField(2)
   final int reviewsCount;
   @JsonKey(name: 'recommendation-rate')
+  @HiveField(3)
   final double recommendationRate;
 
   RatingModel({

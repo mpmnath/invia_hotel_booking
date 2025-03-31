@@ -1,15 +1,21 @@
+import 'package:hive/hive.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'travel_date_model.g.dart';
 
 @JsonSerializable(fieldRename: FieldRename.kebab)
+@HiveType(typeId: 4)
 class TravelDateModel {
+  @HiveField(0)
   final int days;
   @JsonKey(name: 'departure-date')
+  @HiveField(1)
   final String departureDate;
+  @HiveField(2)
   final int nights;
   @JsonKey(name: 'return-date')
+  @HiveField(3)
   final String returnDate;
 
   TravelDateModel({
