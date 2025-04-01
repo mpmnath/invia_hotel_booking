@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:invia_hotel_booking/features/favorites/presentation/cubits/favorites_cubit.dart';
-import 'package:invia_hotel_booking/features/favorites/presentation/pages/favorites_page.dart';
+import 'package:invia_hotel_booking/features/favorites/presentation/view/favorites_page.dart';
 import 'package:invia_hotel_booking/l10n/l10n.dart';
 import 'package:mocktail/mocktail.dart';
 
