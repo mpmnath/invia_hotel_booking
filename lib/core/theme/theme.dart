@@ -28,7 +28,7 @@ class HotelBookingTheme {
         onSurface: colors.foreground,
         tertiary: colors.tertiary,
       ),
-      textTheme: HotelBookingTextTheme.getTextTheme(colors.tertiary),
+      textTheme: HotelBookingTextTheme.getTextTheme(colors.textColor),
       appBarTheme: HotelBookingComponentThemes.getAppBarTheme(colors),
       elevatedButtonTheme: HotelBookingComponentThemes.getButtonTheme(colors),
       dividerTheme: HotelBookingComponentThemes.getDividerTheme(colors),
@@ -37,7 +37,6 @@ class HotelBookingTheme {
       bottomNavigationBarTheme: HotelBookingComponentThemes.getBottomNavTheme(
         colors,
       ),
-      radioTheme: HotelBookingComponentThemes.getRadioTheme(colors),
       visualDensity: VisualDensity.compact,
     );
   }

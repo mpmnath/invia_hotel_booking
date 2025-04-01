@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:invia_hotel_booking/core/theme/color_palette.dart';
 
 class HotelBookingComponentThemes {
@@ -22,7 +23,7 @@ class HotelBookingComponentThemes {
       color: colors.card,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       shadowColor: colors.shadow,
-      elevation: 2,
+      elevation: 4,
     );
   }
 
@@ -32,11 +33,10 @@ class HotelBookingComponentThemes {
         backgroundColor: colors.primary,
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        textStyle: const TextStyle(
-          fontFamily: 'OpenSans',
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        textStyle: GoogleFonts.openSans(
           fontSize: 14,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );
@@ -47,7 +47,7 @@ class HotelBookingComponentThemes {
   }
 
   static IconThemeData getIconTheme(HotelBookingColors colors) {
-    return IconThemeData(color: colors.icon, size: 24);
+    return IconThemeData(color: colors.icon, size: 16);
   }
 
   static BottomNavigationBarThemeData getBottomNavTheme(
