@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
-import 'package:invia_hotel_booking/features/account/presentation/pages/account_page.dart';
-import 'package:invia_hotel_booking/features/favorites/presentation/pages/favorites_page.dart';
-import 'package:invia_hotel_booking/features/hotels/presentation/pages/hotels_page.dart';
-import 'package:invia_hotel_booking/features/overview/presentation/pages/overview_page.dart';
+import 'package:invia_hotel_booking/features/account/presentation/view/account_page.dart';
+import 'package:invia_hotel_booking/features/favorites/presentation/view/favorites_page.dart';
+import 'package:invia_hotel_booking/features/hotels/presentation/view/hotels_page.dart';
+import 'package:invia_hotel_booking/features/overview/presentation/view/overview_page.dart';
 import 'package:invia_hotel_booking/main.dart';
 
 part 'app_router.gr.dart';

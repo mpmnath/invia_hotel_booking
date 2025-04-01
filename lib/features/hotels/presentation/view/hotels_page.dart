@@ -1,12 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:invia_hotel_booking/core/constants/values.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
 import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_card_widget.dart';
 import 'package:invia_hotel_booking/features/favorites/presentation/cubits/favorites_cubit.dart';
 import 'package:invia_hotel_booking/features/hotels/presentation/cubits/hotels_cubit.dart';
+import 'package:invia_hotel_booking/features/hotels/presentation/view/widgets/retry_widget.dart';
 
 @RoutePage()
 class HotelsPage extends StatelessWidget {
@@ -77,16 +79,20 @@ class HotelsPage extends StatelessWidget {
               ),
             );
 
-          case HotelsError error:
-            return Center(child: Text(error.message));
-
-          default:
+          case HotelsError():
             return Center(
-              child: TextButton(
-                onPressed: () => context.read<HotelsCubit>().getHotels(),
-                child: Text(context.l10n.tryAgain),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(context.l10n.errorLoadingHotels),
+                  Gap(smallPadding),
+                  RetryWidget(),
+                ],
               ),
             );
+
+          default:
+            return Center(child: RetryWidget());
         }
       },
     );
