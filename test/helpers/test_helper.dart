@@ -12,4 +12,7 @@ void registerFallbackValues() {
   // Fallbacks for ThemeMode & Locale
   registerFallbackValue(ThemeMode.system);
   registerFallbackValue(const Locale('en'));
+
+  // Fallbacks for Fake NoParams
+  registerFallbackValue(NoParamsFake());
 }
