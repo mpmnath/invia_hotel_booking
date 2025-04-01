@@ -26,16 +26,14 @@ import '../features/favorites/data/repositories/favorites_repository_impl.dart'
     as _i317;
 import '../features/favorites/domain/repositories/favorites_repository.dart'
     as _i159;
+import '../features/favorites/domain/usecases/get_favorites_stream_usecase.dart'
+    as _i595;
 import '../features/favorites/domain/usecases/get_favorites_usecase.dart'
     as _i570;
-import '../features/favorites/domain/usecases/stream_favorites_usecase.dart'
-    as _i417;
 import '../features/favorites/domain/usecases/toogle_favorite_usecase.dart'
     as _i213;
 import '../features/favorites/presentation/cubits/favorites_cubit.dart'
     as _i1030;
-import '../features/hotels/data/datasources/hotels_remote_data_source.dart'
-    as _i896;
 import '../features/hotels/data/datasources/hotels_remote_datasource.dart'
     as _i513;
 import '../features/hotels/data/repositories/hotels_repository_impl.dart'
@@ -69,8 +67,6 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i180.ApiClientImpl(dio: gh<_i361.Dio>()));
     gh.lazySingleton<_i513.HotelsRemoteDataSource>(() =>
         _i513.HotelsRemoteDataSourceImpl(apiClient: gh<_i424.ApiClient>()));
-    gh.lazySingleton<_i896.HotelsRemoteDataSource>(() =>
-        _i896.HotelsRemoteDataSourceImpl(apiClient: gh<_i424.ApiClient>()));
     gh.lazySingleton<_i751.FavoritesLocalDataSource>(() =>
         _i751.FavoritesLocalDataSourceImpl(gh<_i979.Box<_i617.HotelModel>>()));
     gh.lazySingleton<_i6.NetworkInfo>(() =>
@@ -82,26 +78,23 @@ extension GetItInjectableX on _i174.GetIt {
           remoteDataSource: gh<_i513.HotelsRemoteDataSource>(),
           networkInfo: gh<_i6.NetworkInfo>(),
         ));
+    gh.lazySingleton<_i595.GetFavoritesStreamUsecase>(() =>
+        _i595.GetFavoritesStreamUsecase(
+            repository: gh<_i159.FavoritesRepository>()));
     gh.lazySingleton<_i213.ToggleFavoriteUsecase>(() =>
         _i213.ToggleFavoriteUsecase(
             repository: gh<_i159.FavoritesRepository>()));
-    gh.lazySingleton<_i570.GetFavoritesHotelStreamUsecase>(() =>
-        _i570.GetFavoritesHotelStreamUsecase(
-            repository: gh<_i159.FavoritesRepository>()));
-    gh.lazySingleton<_i417.StreamFavoritesUsecase>(() =>
-        _i417.StreamFavoritesUsecase(
-            repository: gh<_i159.FavoritesRepository>()));
+    gh.lazySingleton<_i570.GetFavoritesUsecase>(() =>
+        _i570.GetFavoritesUsecase(repository: gh<_i159.FavoritesRepository>()));
     gh.singleton<_i1030.FavoritesCubit>(() => _i1030.FavoritesCubit(
-          getFavoritesHotelStreamUsecase:
-              gh<_i570.GetFavoritesHotelStreamUsecase>(),
+          getFavoritesUsecase: gh<_i570.GetFavoritesUsecase>(),
+          getFavoritesStreamUsecase: gh<_i595.GetFavoritesStreamUsecase>(),
           toggleFavoriteUsecase: gh<_i213.ToggleFavoriteUsecase>(),
         ));
-    gh.lazySingleton<_i198.GetHotelsUseCase>(
-        () => _i198.GetHotelsUseCase(repository: gh<_i43.HotelsRepository>()));
-    gh.lazySingleton<_i344.HotelsCubit>(() => _i344.HotelsCubit(
-          getHotelsUseCase: gh<_i198.GetHotelsUseCase>(),
-          streamFavoritesUsecase: gh<_i417.StreamFavoritesUsecase>(),
-        ));
+    gh.lazySingleton<_i198.GetHotelsUsecase>(
+        () => _i198.GetHotelsUsecase(repository: gh<_i43.HotelsRepository>()));
+    gh.lazySingleton<_i344.HotelsCubit>(() =>
+        _i344.HotelsCubit(getHotelsUseCase: gh<_i198.GetHotelsUsecase>()));
     return this;
   }
 }
