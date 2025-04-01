@@ -5,10 +5,10 @@ import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/extensions/page_type_ext.dart';
 import 'package:invia_hotel_booking/core/types/page_type.dart';
 import 'package:invia_hotel_booking/core/widgets/hotel_card/favorite_widget.dart';
-import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_detail_item/hotel_detail_item_widget.dart';
+import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_details/hotel_details_widget.dart';
 import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_price_overview/hotel_best_offer_widget.dart';
 import 'package:invia_hotel_booking/core/widgets/hotel_card/image_carousel_widget.dart';
-import 'package:invia_hotel_booking/core/widgets/hotel_card/rating_overall_widget.dart';
+import 'package:invia_hotel_booking/core/widgets/hotel_card/rating/ratings_widget.dart';
 
 class HotelCard extends StatelessWidget {
   final Hotel hotel;
@@ -53,7 +53,7 @@ class HotelCard extends StatelessWidget {
                       Positioned(
                         bottom: 12,
                         left: 8,
-                        child: RatingOverallWidget(rating: hotel.rating!),
+                        child: RatingsWidget(rating: hotel.rating!),
                       ),
                   ],
                 ),
@@ -62,7 +62,7 @@ class HotelCard extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: normalPadding),
                   child: Column(
                     children: [
-                      HotelDetailItemWidget(hotel: hotel),
+                      HotelDetailsWidget(hotel: hotel),
                       Gap(normalPadding),
                       Divider(),
                       if (pageType == PageType.hotel) ...[

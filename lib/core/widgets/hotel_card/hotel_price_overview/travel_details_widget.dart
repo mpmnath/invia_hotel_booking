@@ -3,9 +3,9 @@ import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/extensions/best_offer_ext.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
 
-class HotelSearchParamsWidget extends StatelessWidget {
+class TravelDetailsWidget extends StatelessWidget {
   final BestOffer bestOffer;
-  const HotelSearchParamsWidget({super.key, required this.bestOffer});
+  const TravelDetailsWidget({super.key, required this.bestOffer});
 
   @override
   Widget build(BuildContext context) {

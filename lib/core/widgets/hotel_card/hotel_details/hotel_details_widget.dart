@@ -3,11 +3,11 @@ import 'package:gap/gap.dart';
 import 'package:invia_hotel_booking/core/constants/values.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
-import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_detail_item/hotel_category_widget.dart';
+import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_details/hotel_category_widget.dart';
 
-class HotelDetailItemWidget extends StatelessWidget {
+class HotelDetailsWidget extends StatelessWidget {
   final Hotel hotel;
-  const HotelDetailItemWidget({super.key, required this.hotel});
+  const HotelDetailsWidget({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {

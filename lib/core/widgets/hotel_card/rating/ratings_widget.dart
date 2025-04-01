@@ -5,9 +5,9 @@ import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
 import 'package:invia_hotel_booking/core/utils/rating_utils.dart';
 
-class RatingOverallWidget extends StatelessWidget {
+class RatingsWidget extends StatelessWidget {
   final Rating rating;
-  const RatingOverallWidget({super.key, required this.rating});
+  const RatingsWidget({super.key, required this.rating});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,12 @@ class RatingOverallWidget extends StatelessWidget {
               padding: EdgeInsets.all(verySmallPadding),
               child: Row(
                 children: [
-                  SentimentWidget(score: rating.score),
+                  Icon(
+                    RatingUtils.getSentimentIcon(rating.score),
+                    color: Colors.white,
+                    size: 14,
+                    fill: 1.0,
+                  ),
                   const Gap(2),
                   Text(
                     '${rating.score} / 5.0',
@@ -44,21 +49,6 @@ class RatingOverallWidget extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class SentimentWidget extends StatelessWidget {
-  final double score;
-  const SentimentWidget({super.key, required this.score});
-
-  @override
-  Widget build(BuildContext context) {
-    return Icon(
-      RatingUtils.getSentimentIcon(score),
-      color: Colors.white,
-      size: 14,
-      fill: 1.0,
     );
   }
 }

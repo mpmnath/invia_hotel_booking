@@ -38,7 +38,12 @@ class ImageWidget extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-        errorWidget: (context, url, error) => const Icon(Icons.error),
+        errorWidget: (context, url, error) => Container(
+              width: width,
+              height: height,
+              color: Colors.grey[200],
+              child: const Icon(Icons.broken_image, color: Colors.grey),
+            ),
       ),
     );
   }
