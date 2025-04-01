@@ -23,11 +23,9 @@ class HotelsRepositoryImpl implements HotelsRepository {
   List<HotelModel>? _cachedHotels;
 
   @override
-  Future<Either<Failure, List<Hotel>>> getHotels({
-    bool forceRefresh = false,
-  }) async {
+  Future<Either<Failure, List<Hotel>>> getHotels() async {
     // Return cached hotels if available and not forcing refresh
-    if (_cachedHotels != null && !forceRefresh) {
+    if (_cachedHotels != null) {
       return Right(_cachedHotels!.map((model) => model.toEntity()).toList());
     }
 
