@@ -1,4 +1,6 @@
+import 'package:invia_hotel_booking/core/usecases/usecases.dart';
 import 'package:invia_hotel_booking/features/favorites/domain/usecases/get_favorites_stream_usecase.dart';
+import 'package:invia_hotel_booking/features/favorites/domain/usecases/get_favorites_usecase.dart';
 import 'package:invia_hotel_booking/features/favorites/domain/usecases/toogle_favorite_usecase.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:hive/hive.dart';
@@ -42,6 +44,8 @@ class MockHotelsRemoteDataSource extends Mock
 class MockGetFavoritesStreamUsecase extends Mock
     implements GetFavoritesStreamUsecase {}
 
+class MockGetFavoritesUsecase extends Mock
+    implements GetFavoritesUsecase {}
 class MockToggleFavoriteUsecase extends Mock implements ToggleFavoriteUsecase {}
 
 class MockGetHotelsUsecase extends Mock implements GetHotelsUsecase {}
@@ -54,3 +58,5 @@ class MockHotelsCubit extends Mock implements HotelsCubit {}
 class MockThemeCubit extends Mock implements ThemeCubit {}
 
 class MockLocaleCubit extends Mock implements LocaleCubit {}
+
+class NoParamsFake extends Fake implements NoParams {}
