@@ -6,10 +6,10 @@ import 'package:invia_hotel_booking/core/usecases/usecases.dart';
 import 'package:invia_hotel_booking/features/hotels/domain/repositories/hotels_repository.dart';
 
 @lazySingleton
-class GetHotelsUseCase implements UseCase<List<Hotel>, NoParams> {
+class GetHotelsUsecase implements UseCase<List<Hotel>, NoParams> {
   final HotelsRepository _repository;
 
-  GetHotelsUseCase({required HotelsRepository repository})
+  GetHotelsUsecase({required HotelsRepository repository})
     : _repository = repository;
 
   @override
