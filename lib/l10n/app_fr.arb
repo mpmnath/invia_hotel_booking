@@ -13,6 +13,7 @@
   "from": "à partir de",
   "toOffer": "Voir les offres",
   "toHotel": "Voir l'hôtel",
+  "errorLoadingHotels": "Erreur lors du chargement des hôtels",
 
   "settings": "Paramètres",
   "theme": "Thème",

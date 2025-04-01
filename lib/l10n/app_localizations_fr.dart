@@ -53,6 +53,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get toHotel => 'Voir l\'hôtel';
 
   @override
+  String get errorLoadingHotels => 'Erreur lors du chargement des hôtels';
+
+  @override
   String get settings => 'Paramètres';
 
   @override

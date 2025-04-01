@@ -17,6 +17,7 @@
   "from": "from",
   "toOffer": "To offers",
   "toHotel": "To hotel",
+  "errorLoadingHotels": "Error loading hotels",
 
   "settings": "Settings",
   "@settings": {

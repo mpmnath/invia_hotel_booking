@@ -53,6 +53,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get toHotel => 'To hotel';
 
   @override
+  String get errorLoadingHotels => 'Error loading hotels';
+
+  @override
   String get settings => 'Settings';
 
   @override

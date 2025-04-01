@@ -13,6 +13,7 @@
   "from": "ab",
   "toOffer": "Zu den Angeboten",
   "toHotel": "Zum Hotel",
+  "errorLoadingHotels": "Fehler beim Laden der Hotels",
 
   "settings": "Einstellungen",
   "@settings": {

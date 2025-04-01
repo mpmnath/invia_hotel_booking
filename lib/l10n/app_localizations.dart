@@ -185,6 +185,12 @@ abstract class AppLocalizations {
   /// **'To hotel'**
   String get toHotel;
 
+  /// No description provided for @errorLoadingHotels.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading hotels'**
+  String get errorLoadingHotels;
+
   /// Title of the settings page
   ///
   /// In en, this message translates to:
