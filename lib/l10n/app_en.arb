@@ -3,60 +3,115 @@
   "@appTitle": {
     "description": "The title of the application"
   },
-  
+
   "overview": "Overview",
-  "@overview": {
-    "description": "Bottom navigation label for overview tab"
-  },
-  
   "hotels": "Hotels",
-  "@hotels": {
-    "description": "Bottom navigation label for hotels tab"
-  },
-  
   "favorites": "Favorites",
-  "@favorites": {
-    "description": "Bottom navigation label for favorites tab"
-  },
-  
   "account": "Account",
-  "@account": {
-    "description": "Bottom navigation label for account tab"
-  },
-  
   "noFavorites": "No favorite hotels yet",
-  "@noFavorites": {
-    "description": "Text shown when no favorites are available"
-  },
-  
   "pricePerNight": "${price}/night",
-  "@pricePerNight": {
-    "description": "Price per night for hotel",
+  "tryAgain": "Try Again",
+  "networkError": "No internet connection. Please check your network settings.",
+  "serverError": "Server error. Please try again later.",
+  "cacheError": "Cache error",
+  "from": "from",
+  "toOffer": "To offers",
+  "toHotel": "To hotel",
+
+  "settings": "Settings",
+  "@settings": {
+      "description": "Title of the settings page"
+    },
+
+  "theme": "Theme",
+  "@theme": {
+      "description": "Label for selecting app theme"
+    },
+
+  "lightTheme": "Light",
+  "@lightTheme": {
+      "description": "Option for light theme"
+    },
+
+  "darkTheme": "Dark",
+  "@darkTheme": {
+      "description": "Option for dark theme"
+    },
+
+  "systemTheme": "System",
+  "@systemTheme": {
+      "description": "Option to use system default theme"
+    },
+
+  "language": "Language",
+  "@language": {
+      "description": "Label for selecting app language"
+    },
+
+  "hotelsCountTitle": "{count} Hotels for {destination}",
+  "@hotelsCountTitle": {
+    "description": "Title showing number of hotels available for a destination",
     "placeholders": {
-      "price": {
+      "count": {
+        "type": "int",
+        "example": "20"
+      },
+      "destination": {
         "type": "String",
-        "example": "$120"
+        "example": "Mallorca"
+      }
+    }
+  },
+
+  "travellers": "{adultCount} Adults{childrenPart}",
+  "@travellers": {
+    "description": "Text showing number of adults and children",
+    "placeholders": {
+      "adultCount": {
+        "type": "int",
+        "example": "2"
+      },
+      "childrenPart": {
+        "type": "String",
+        "example": " | 2 Children"
+      }
+    }
+  },
+
+  "childrenPart": "{childCount, plural, =0{} =1{ | 1 Child} other{ | {childCount} Children}}",
+  "@childrenPart": {
+    "description": "Children part text based on number of children",
+    "placeholders": {
+      "childCount": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+
+  "flightIncludedOrNot": "{included, select, true{incl. flight} false{without flight} other{without flight}}",
+  "@flightIncludedOrNot": {
+    "description": "Text to show if flight is included or not",
+    "placeholders": {
+      "included": {
+        "type": "String",
+        "example": "true"
       }
     }
   },
   
-  "tryAgain": "Try Again",
-  "@tryAgain": {
-    "description": "Button text to retry an action"
-  },
-  
-  "networkError": "No internet connection. Please check your network settings.",
-  "@networkError": {
-    "description": "Message shown when there is no internet connection"
-  },
-  
-  "serverError": "Server error. Please try again later.",
-  "@serverError": {
-    "description": "Message shown when there is a server error"
-  },
-
-  "cacheError": "Cache error",
-  "@cacheError": {
-    "description": "Message shown when there is a cache error"
+  "travelDuration": "{days, plural, =1{1 day} other{{days} days}} | {nights, plural, =1{1 night} other{{nights} nights}}",
+  "@travelDuration": {
+    "description": "Text showing number of travel days and nights",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "8"
+      },
+      "nights": {
+        "type": "int",
+        "example": "7"
+      }
+    }
   }
 }

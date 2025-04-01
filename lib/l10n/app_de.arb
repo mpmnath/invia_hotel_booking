@@ -1,0 +1,113 @@
+{
+  "appTitle": "Hotelbuchung",
+  "overview": "Übersicht",
+  "hotels": "Hotels",
+  "favorites": "Favoriten",
+  "account": "Konto",
+  "noFavorites": "Noch keine Favoriten",
+  "pricePerNight": "${price}/Nacht",
+  "tryAgain": "Erneut versuchen",
+  "networkError": "Keine Internetverbindung. Bitte überprüfe deine Netzwerkeinstellungen.",
+  "serverError": "Serverfehler. Bitte versuche es später erneut.",
+  "cacheError": "Cache-Fehler",
+  "from": "ab",
+  "toOffer": "Zu den Angeboten",
+  "toHotel": "Zum Hotel",
+
+  "settings": "Einstellungen",
+  "@settings": {
+    "description": "Titel der Einstellungsseite"
+  },
+
+  "theme": "Design",
+  "@theme": {
+    "description": "Bezeichnung zur Auswahl des App-Designs"
+  },
+
+  "lightTheme": "Helles",
+  "@lightTheme": {
+    "description": "Option für helles Design"
+  },
+
+  "darkTheme": "Dunkles",
+  "@darkTheme": {
+    "description": "Option für dunkles Design"
+  },
+
+  "systemTheme": "System",
+  "@systemTheme": {
+    "description": "Option zur Verwendung des Systemdesigns"
+  },
+
+  "language": "Sprache",
+  "@language": {
+    "description": "Bezeichnung zur Auswahl der App-Sprache"
+  },
+
+  "hotelsCountTitle": "{count} Hotels für {destination}",
+  "@hotelsCountTitle": {
+    "description": "Title showing number of hotels available for a destination",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "20"
+      },
+      "destination": {
+        "type": "String",
+        "example": "Mallorca"
+      }
+    }
+  },
+
+  "travellers": "{adultCount} Erw.{childrenPart}",
+  "@travellers": {
+    "description": "Text showing number of adults and children in German",
+    "placeholders": {
+      "adultCount": {
+        "type": "int",
+        "example": "2"
+      },
+      "childrenPart": {
+        "type": "String",
+        "example": " | 2 Kinder"
+      }
+    }
+  },
+
+  "childrenPart": "{childCount, plural, =0{} =1{ | 1 Kind} other{ | {childCount} Kinder}}",
+  "@childrenPart": {
+    "description": "Children part text based on number of children in German",
+    "placeholders": {
+      "childCount": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+
+    "flightIncludedOrNot": "{included, select, true{inkl. Flug} false{ohne Flug} other{ohne Flug}}",
+    "@flightIncludedOrNot": {
+    "description": "Text to show if flight is included or not in German",
+    "placeholders": {
+        "included": {
+        "type": "String",
+        "example": "true"
+        }
+    }
+    },
+
+  "travelDuration": "{days, plural, =1{1 Tag} other{{days} Tage}} | {nights, plural, =1{1 Nacht} other{{nights} Nächte}}",
+  "@travelDuration": {
+    "description": "Text showing number of travel days and nights in German",
+    "placeholders": {
+      "days": {
+        "type": "int",
+        "example": "8"
+      },
+      "nights": {
+        "type": "int",
+        "example": "7"
+      }
+    }
+  }
+}

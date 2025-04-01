@@ -27,7 +27,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noFavorites => 'No favorite hotels yet';
 
   @override
-  String pricePerNight(String price) {
+  String pricePerNight(Object price) {
     return '\$$price/night';
   }
 
@@ -42,4 +42,83 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cacheError => 'Cache error';
+
+  @override
+  String get from => 'from';
+
+  @override
+  String get toOffer => 'To offers';
+
+  @override
+  String get toHotel => 'To hotel';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get lightTheme => 'Light';
+
+  @override
+  String get darkTheme => 'Dark';
+
+  @override
+  String get systemTheme => 'System';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String hotelsCountTitle(int count, String destination) {
+    return '$count Hotels for $destination';
+  }
+
+  @override
+  String travellers(int adultCount, String childrenPart) {
+    return '$adultCount Adults$childrenPart';
+  }
+
+  @override
+  String childrenPart(int childCount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      childCount,
+      locale: localeName,
+      other: ' | $childCount Children',
+      one: ' | 1 Child',
+      zero: '',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String flightIncludedOrNot(String included) {
+    String _temp0 = intl.Intl.selectLogic(
+      included,
+      {
+        'true': 'incl. flight',
+        'false': 'without flight',
+        'other': 'without flight',
+      },
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String travelDuration(int days, int nights) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days',
+      one: '1 day',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      nights,
+      locale: localeName,
+      other: '$nights nights',
+      one: '1 night',
+    );
+    return '$_temp0 | $_temp1';
+  }
 }

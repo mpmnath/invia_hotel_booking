@@ -1,0 +1,29 @@
+{
+  "appTitle": "Prenotazione Hotel",
+  "overview": "Panoramica",
+  "hotels": "Hotel",
+  "favorites": "Preferiti",
+  "account": "Account",
+  "noFavorites": "Nessun hotel preferito ancora",
+  "pricePerNight": "${price}/notte",
+  "tryAgain": "Riprova",
+  "networkError": "Nessuna connessione a Internet. Controlla le impostazioni di rete.",
+  "serverError": "Errore del server. Riprova più tardi.",
+  "cacheError": "Errore di cache",
+  "from": "da",
+  "toOffer": "Vedi offerte",
+  "toHotel": "Vedi hotel",
+
+  "settings": "Impostazioni",
+  "theme": "Tema",
+  "lightTheme": "Chiaro",
+  "darkTheme": "Scuro",
+  "systemTheme": "Sistema",
+  "language": "Lingua",
+
+  "hotelsCountTitle": "{count} Hotel per {destination}",
+  "travellers": "{adultCount} Adulti{childrenPart}",
+  "childrenPart": "{childCount, plural, =0{} =1{ | 1 Bambino} other{ | {childCount} Bambini}}",
+  "flightIncludedOrNot": "{included, select, true{incl. volo} false{senza volo} other{senza volo}}",
+  "travelDuration": "{days, plural, =1{1 giorno} other{{days} giorni}} | {nights, plural, =1{1 notte} other{{nights} notti}}"
+}
