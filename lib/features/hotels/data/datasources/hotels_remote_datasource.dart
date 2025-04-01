@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:invia_hotel_booking/core/api/api_client.dart';
 import 'package:invia_hotel_booking/core/api/api_constants.dart';
@@ -7,7 +8,7 @@ import 'package:invia_hotel_booking/core/data/models/hotel_model.dart';
 abstract class HotelsRemoteDataSource {
   /// Fetches a list of hotels from the API
   ///
-  /// Returns a [List<Hotel>] if successful, or throws an exception if an error occurs
+  /// Returns a [List<HotelModel>] if successful, or throws an exception if an error occurs
   Future<List<HotelModel>> getHotels();
 }
 
@@ -24,14 +25,24 @@ class HotelsRemoteDataSourceImpl implements HotelsRemoteDataSource {
       final response = await _apiClient.get(
         ApiConstants.baseUrlWithHotelsEndpoint,
       );
+
       if (response['hotels'] is List) {
         final hotelsList = response['hotels'] as List;
-        // Check if the list is empty
         if (hotelsList.isEmpty) {
           return [];
         }
-        final List<HotelModel> results =
-            hotelsList.map((hotel) => HotelModel.fromJson(hotel)).toList();
+
+        // Ensure elements are raw Map (not already parsed models)
+        if (hotelsList.any((e) => e is! Map<String, dynamic>)) {
+          throw ServerException(message: 'Invalid hotel data structure');
+        }
+        
+        // Parse in a background isolate
+        final List<HotelModel> results = await compute(
+          parseHotelsList,
+          hotelsList,
+        );
+
         return results;
       } else {
         throw ServerException(message: 'Invalid response format');
@@ -43,4 +54,14 @@ class HotelsRemoteDataSourceImpl implements HotelsRemoteDataSource {
       );
     }
   }
+}
+
+/// Helper function to parse hotels in background isolate
+List<HotelModel> parseHotelsList(List<dynamic> hotelsJson) {
+  return hotelsJson
+      .map(
+        (hotelJson) =>
+            HotelModel.fromJson(Map<String, dynamic>.from(hotelJson)),
+      )
+      .toList();
 }
