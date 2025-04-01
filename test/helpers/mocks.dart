@@ -1,3 +1,4 @@
+import 'package:invia_hotel_booking/core/network/network_info.dart';
 import 'package:invia_hotel_booking/core/usecases/usecases.dart';
 import 'package:invia_hotel_booking/features/favorites/domain/usecases/get_favorites_stream_usecase.dart';
 import 'package:invia_hotel_booking/features/favorites/domain/usecases/get_favorites_usecase.dart';
@@ -27,6 +28,9 @@ class MockHiveBox<T> extends Mock implements Box<T> {}
 
 /// Mock API
 class MockApiClient extends Mock implements ApiClient {}
+
+/// Mock NetworkInfo
+class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 /// Mock Repositories
 class MockFavoritesRepository extends Mock implements FavoritesRepository {}
