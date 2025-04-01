@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:invia_hotel_booking/core/network/network_info.dart';
 import 'package:invia_hotel_booking/core/usecases/usecases.dart';
 import 'package:invia_hotel_booking/features/favorites/domain/usecases/get_favorites_stream_usecase.dart';
@@ -31,6 +32,7 @@ class MockApiClient extends Mock implements ApiClient {}
 
 /// Mock NetworkInfo
 class MockNetworkInfo extends Mock implements NetworkInfo {}
+class MockConnectivity extends Mock implements Connectivity {}
 
 /// Mock Repositories
 class MockFavoritesRepository extends Mock implements FavoritesRepository {}
