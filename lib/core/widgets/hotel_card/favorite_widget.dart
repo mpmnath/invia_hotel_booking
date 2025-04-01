@@ -14,7 +14,7 @@ class FavoriteWidget extends StatelessWidget {
     return IconButton(
       onPressed: onTap,
       icon: Icon(
-        isFavorite ? Icons.favorite : Icons.favorite,
+        Icons.favorite,
         color: isFavorite ? Colors.red : Colors.white,
         weight: 2,
         size: 24,
