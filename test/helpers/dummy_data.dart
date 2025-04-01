@@ -36,7 +36,7 @@ final dummyHotel = Hotel(
     flightIncluded: false,
     availableSpecialGroups: [],
     travelPrice: 1000,
-    total: 2000,
+    total: 84400,
     simplePricePerPerson: 500,
     originalTravelPrice: 1200,
     includedTravelDiscount: 200,
@@ -97,3 +97,10 @@ final rawHotelData = {
     'applied-travel-discount': '',
   },
 };
+
+const dummyRating = Rating(
+  score: 4.5,
+  scoreDescription: 'Sehr Gut',
+  reviewsCount: 150,
+  recommendationRate: 90,
+);
