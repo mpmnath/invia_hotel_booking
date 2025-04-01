@@ -135,8 +135,6 @@ class BestOffer {
     required this.detailedPricePerPerson,
     this.appliedTravelDiscount,
   });
-
-  double get totalPrice => total;
 }
 
 class Hotel extends Equatable {
@@ -149,7 +147,7 @@ class Hotel extends Equatable {
   final double longitude;
   final List<Image> images;
   final Rating? rating;
-  final BestOffer? bestOffer;
+  final BestOffer bestOffer;
 
   const Hotel({
     required this.id,
@@ -161,7 +159,7 @@ class Hotel extends Equatable {
     required this.longitude,
     required this.images,
     this.rating,
-    this.bestOffer,
+    required this.bestOffer,
   });
 
   @override
@@ -173,22 +171,4 @@ class Hotel extends Equatable {
     latitude,
     longitude,
   ];
-
-  // Helper method to get the first image or a default
-  String get mainImage {
-    if (images.isNotEmpty) {
-      return images.first.large;
-    }
-    return '';
-  }
-
-  // Helper method to get the rating score or a default
-  double get ratingScore {
-    return rating?.score ?? 0.0;
-  }
-
-  // Helper method to get the price or a default
-  double get price {
-    return bestOffer?.totalPrice ?? 0.0;
-  }
 }
