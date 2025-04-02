@@ -241,10 +241,15 @@ This high level of test coverage ensures the app is reliable and maintainable, w
 
 ## Screenshots
 
-![Hotels | DE | Light](docs/hotels_de_light.png)
-![Hotels | DE | Dark](docs/hotels_de_dark.png)
-![Favorites | DE | Light](docs/favorites_de_light.png)
-![Favorites | DE | Light](docs/favorites_de_dark.png)
+<div align="center">
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px;">
+    <img src="docs/hotels_de_light.png" width="200" alt="Hotels | DE | Light">
+    <img src="docs/hotels_de_dark.png" width="200" alt="Hotels | DE | Dark">
+    <img src="docs/favorites_de_light.png" width="200" alt="Favorites | DE | Light">
+    <img src="docs/favorites_de_dark.png" width="200" alt="Favorites | DE | Dark">
+  </div>
+  <p>Screenshots showing Hotels and Favorites tabs in light and dark themes (German language)</p>
+</div>
 
 
 ## Key Design Decisions
