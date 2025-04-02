@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:invia_hotel_booking/core/constants/values.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
@@ -9,23 +10,23 @@ import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_details/hotel_
 import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_price_overview/hotel_best_offer_widget.dart';
 import 'package:invia_hotel_booking/core/widgets/hotel_card/image_carousel_widget.dart';
 import 'package:invia_hotel_booking/core/widgets/hotel_card/rating/ratings_widget.dart';
+import 'package:invia_hotel_booking/features/favorites/presentation/cubits/favorites_cubit.dart';
 
 class HotelCard extends StatelessWidget {
   final Hotel hotel;
-  final bool isFavorite;
   final VoidCallback onFavoriteToggle;
   final PageType pageType;
 
   const HotelCard({
     super.key,
     required this.hotel,
-    required this.isFavorite,
     required this.onFavoriteToggle,
     this.pageType = PageType.hotel,
   });
 
   @override
   Widget build(BuildContext context) {
+    debugPrint("HotelCard build");
     return Material(
       color: Colors.transparent,
       child: Padding(
@@ -44,9 +45,16 @@ class HotelCard extends StatelessWidget {
                     Positioned(
                       top: 0,
                       right: 2,
-                      child: FavoriteWidget(
-                        isFavorite: isFavorite,
-                        onTap: onFavoriteToggle,
+                      child: BlocSelector<FavoritesCubit, List<Hotel>, bool>(
+                        selector:
+                            (favorites) =>
+                                favorites.any((h) => h.id == hotel.id),
+                        builder: (context, isFavorite) {
+                          return FavoriteWidget(
+                            isFavorite: isFavorite,
+                            onTap: onFavoriteToggle,
+                          );
+                        },
                       ),
                     ),
                     if (hotel.rating != null)
