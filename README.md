@@ -241,7 +241,11 @@ This high level of test coverage ensures the app is reliable and maintainable, w
 
 ## Screenshots
 
-[Add screenshots of the app here]
+![Hotels | DE | Light](docs/hotels_de_light.png)
+![Hotels | DE | Dark](docs/hotels_de_dark.png)
+![Favorites | DE | Light](docs/favorites_de_light.png)
+![Favorites | DE | Light](docs/favorites_de_dark.png)
+
 
 ## Key Design Decisions
 
