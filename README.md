@@ -7,7 +7,7 @@ The primary goal of this project is to demonstrate technical expertise in:
 - Effective state management using the BLoC pattern
 - Type-safe navigation with deep linking
 - Local storage for favorites and settings
-- Comprehensive testing with 97% code coverage
+- Comprehensive testing with 97.2% code coverage
 - Multilingual support and theming capabilities
 
 ## Table of Contents
@@ -170,7 +170,7 @@ The app has extensive test coverage including:
 
 ### Test Coverage
 - Run tests with coverage using `flutter test --coverage`
-- Actual test coverage: **97.0%** overall line coverage
+- Actual test coverage: **97.2%** overall line coverage
 - Custom script for filtering coverage metrics in `/scripts/test_coverage.sh`
 
 #### Detailed Test Coverage Report
@@ -183,7 +183,7 @@ The app has extensive test coverage including:
 | core/theme/ | 100.0% |
 | core/theme/cubit/ | 100.0% |
 | core/utils/ | 100.0% |
-| core/widgets/hotel_card/ | 90.5% |
+| core/widgets/hotel_card/ | 90.9% |
 | core/widgets/hotel_card/hotel_details/ | 100.0% |
 | core/widgets/hotel_card/hotel_price_overview/ | 100.0% |
 | core/widgets/hotel_card/rating/ | 100.0% |
@@ -196,7 +196,7 @@ The app has extensive test coverage including:
 | features/hotels/data/repositories/ | 100.0% |
 | features/hotels/domain/usecases/ | 100.0% |
 | features/hotels/presentation/cubits/ | 100.0% |
-| features/hotels/presentation/view/ | 93.0% |
+| features/hotels/presentation/view/ | 93.2% |
 | features/hotels/presentation/view/widgets/ | 100.0% |
 
 This high level of test coverage ensures the app is reliable and maintainable, with comprehensive testing across all critical components.
