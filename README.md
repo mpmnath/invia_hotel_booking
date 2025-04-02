@@ -240,7 +240,7 @@ To ensure proper functionality, it's recommended to use the same or newer Flutte
 
 3. **Build generated files**
    ```
-   flutter pub run build_runner build --delete-conflicting-outputs
+   dart run build_runner build --delete-conflicting-outputs
    ```
 
 4. **Run the app**
