@@ -220,9 +220,16 @@ This high level of test coverage ensures the app is reliable and maintainable, w
 
 ## Setup Instructions
 
+## Flutter & Dart Versions
+This project was developed using:
+- **Flutter Version**: 3.29.2
+- **Dart Version**: 3.7.2
+
+To ensure proper functionality, it's recommended to use the same or newer Flutter and Dart versions when running the project.
+
 1. **Clone the repository**
    ```
-   git clone https://github.com/yourusername/invia_hotel_booking.git
+   git clone https://github.com/mpmnath/invia_hotel_booking.git
    cd invia_hotel_booking
    ```
 
@@ -248,14 +255,14 @@ This high level of test coverage ensures the app is reliable and maintainable, w
 
 6. **Run tests with coverage**
    ```
-   ./scripts/test_coverage.sh
+   sh /scripts/test_coverage.sh
    ```
 
 ## Key Design Decisions
 
 ### State Management
 - Chose BLoC/Cubit for predictable and testable state management
-- Implemented hydrated BLoC for persisting state
+- Implemented hydrated BLoC for persisting state for theme and locale
 
 ### Architecture
 - Followed clean architecture for better separation of concerns
@@ -264,6 +271,7 @@ This high level of test coverage ensures the app is reliable and maintainable, w
 ### Performance Optimizations
 - Cached network images for faster loading
 - Used lazy loading for hotel list
+- Used compute to parse large JSON data
 - Implemented efficient favorites toggle with minimal rebuilds
 
 ### Testing Strategy
