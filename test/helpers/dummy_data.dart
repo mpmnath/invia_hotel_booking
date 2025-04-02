@@ -100,7 +100,7 @@ final rawHotelData = {
 
 const dummyRating = Rating(
   score: 4.5,
-  scoreDescription: 'Sehr Gut',
+  scoreDescription: 'Sehr gut',
   reviewsCount: 150,
   recommendationRate: 90,
 );

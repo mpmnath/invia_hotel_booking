@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:invia_hotel_booking/core/constants/values.dart';
 import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
+import 'package:invia_hotel_booking/core/extensions/int_ext.dart';
 import 'package:invia_hotel_booking/core/utils/rating_utils.dart';
 
 class RatingsWidget extends StatelessWidget {
@@ -41,7 +42,8 @@ class RatingsWidget extends StatelessWidget {
           ),
           Gap(smallPadding),
           Text(
-            "${rating.scoreDescription}  (${rating.reviewsCount} Bew.)",
+            "${RatingUtils.getSentimentDescription(context, rating.score)}  "
+            "(${rating.reviewsCount.localizedReviews(context)})",
             style: context.textTheme.labelMedium!.copyWith(
               fontWeight: FontWeight.bold,
               color: Colors.white,
