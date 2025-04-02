@@ -14,7 +14,12 @@
   "toOffer": "Ver ofertas",
   "toHotel": "Ver hotel",
   "errorLoadingHotels": "Error al cargar los hoteles",
-  
+  "ratingExcellent": "Excelente",
+  "ratingVeryGood": "Muy bueno",
+  "ratingGood": "Bueno",
+  "ratingFair": "Aceptable",
+  "ratingPoor": "Débil",
+  "ratingReviews": "{count} opiniones",
   "settings": "Configuración",
   "theme": "Tema",
   "lightTheme": "Claro",

@@ -191,6 +191,42 @@ abstract class AppLocalizations {
   /// **'Error loading hotels'**
   String get errorLoadingHotels;
 
+  /// No description provided for @ratingExcellent.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent'**
+  String get ratingExcellent;
+
+  /// No description provided for @ratingVeryGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Very good'**
+  String get ratingVeryGood;
+
+  /// No description provided for @ratingGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get ratingGood;
+
+  /// No description provided for @ratingFair.
+  ///
+  /// In en, this message translates to:
+  /// **'Fair'**
+  String get ratingFair;
+
+  /// No description provided for @ratingPoor.
+  ///
+  /// In en, this message translates to:
+  /// **'Poor'**
+  String get ratingPoor;
+
+  /// No description provided for @ratingReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} reviews'**
+  String ratingReviews(Object count);
+
   /// Title of the settings page
   ///
   /// In en, this message translates to:

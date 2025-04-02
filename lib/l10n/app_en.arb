@@ -18,7 +18,13 @@
   "toOffer": "To offers",
   "toHotel": "To hotel",
   "errorLoadingHotels": "Error loading hotels",
-
+  "ratingExcellent": "Excellent",
+  "ratingVeryGood": "Very good",
+  "ratingGood": "Good",
+  "ratingFair": "Fair",
+  "ratingPoor": "Poor",
+  "ratingReviews": "{count} reviews",
+  
   "settings": "Settings",
   "@settings": {
       "description": "Title of the settings page"

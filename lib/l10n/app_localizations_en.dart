@@ -56,6 +56,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorLoadingHotels => 'Error loading hotels';
 
   @override
+  String get ratingExcellent => 'Excellent';
+
+  @override
+  String get ratingVeryGood => 'Very good';
+
+  @override
+  String get ratingGood => 'Good';
+
+  @override
+  String get ratingFair => 'Fair';
+
+  @override
+  String get ratingPoor => 'Poor';
+
+  @override
+  String ratingReviews(Object count) {
+    return '$count reviews';
+  }
+
+  @override
   String get settings => 'Settings';
 
   @override
