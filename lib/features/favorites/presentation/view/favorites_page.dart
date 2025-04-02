@@ -14,7 +14,8 @@ class FavoritesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<FavoritesCubit, List<Hotel>>(
+    return BlocSelector<FavoritesCubit, List<Hotel>, List<Hotel>>(
+      selector: (favorites) => favorites,
       builder: (context, favorites) {
         if (favorites.isEmpty) {
           return Center(child: Text(context.l10n.noFavorites));
@@ -28,8 +29,8 @@ class FavoritesPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final hotel = favorites[index];
             return HotelCard(
+              key: ValueKey(hotel.id),
               hotel: hotel,
-              isFavorite: true,
               pageType: PageType.favorites,
               onFavoriteToggle: () {
                 context.read<FavoritesCubit>().toggleFavorite(hotel);
