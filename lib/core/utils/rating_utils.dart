@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invia_hotel_booking/l10n/app_localizations.dart';
 
 class RatingUtils {
   static Color getSentimentColor(double score) {
@@ -26,6 +27,21 @@ class RatingUtils {
       return Icons.sentiment_dissatisfied;
     } else {
       return Icons.sentiment_very_dissatisfied;
+    }
+  }
+
+    static String getSentimentDescription(BuildContext context, double score) {
+    final l10n = AppLocalizations.of(context)!;
+    if (score >= 4.4) {
+      return l10n.ratingExcellent;
+    } else if (score >= 4.1) {
+      return l10n.ratingVeryGood;
+    } else if (score >= 3.8) {
+      return l10n.ratingGood;
+    } else if (score >= 3.5) {
+      return l10n.ratingFair;
+    } else {
+      return l10n.ratingPoor;
     }
   }
 }

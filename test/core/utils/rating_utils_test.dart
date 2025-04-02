@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:invia_hotel_booking/core/utils/rating_utils.dart';
+import 'package:invia_hotel_booking/l10n/l10n.dart';
 
 void main() {
   group('RatingUtils', () {
@@ -53,6 +54,78 @@ void main() {
         expect(
           RatingUtils.getSentimentIcon(3.4),
           Icons.sentiment_very_dissatisfied,
+        );
+      });
+    });
+
+    group('getSentimentDescription', () {
+      testWidgets('returns all descriptions in English', (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            locale: const Locale('en'),
+            localizationsDelegates: L10n.localizationsDelegates,
+            supportedLocales: L10n.supportedLocales,
+            home: Builder(
+              builder: (context) {
+                expect(
+                  RatingUtils.getSentimentDescription(context, 4.5),
+                  'Excellent',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 4.2),
+                  'Very good',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 3.9),
+                  'Good',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 3.6),
+                  'Fair',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 3.4),
+                  'Poor',
+                );
+                return const SizedBox();
+              },
+            ),
+          ),
+        );
+      });
+
+      testWidgets('returns all descriptions in German', (tester) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            locale: const Locale('de'),
+            localizationsDelegates: L10n.localizationsDelegates,
+            supportedLocales: L10n.supportedLocales,
+            home: Builder(
+              builder: (context) {
+                expect(
+                  RatingUtils.getSentimentDescription(context, 4.5),
+                  'Ausgezeichnet',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 4.2),
+                  'Sehr gut',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 3.9),
+                  'Gut',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 3.6),
+                  'Angemessen',
+                );
+                expect(
+                  RatingUtils.getSentimentDescription(context, 3.4),
+                  'Schwach',
+                );
+                return const SizedBox();
+              },
+            ),
+          ),
         );
       });
     });
