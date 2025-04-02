@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:invia_hotel_booking/core/constants/values.dart';
-import 'package:invia_hotel_booking/core/domain/entities/hotel.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
 import 'package:invia_hotel_booking/core/widgets/hotel_card/hotel_card_widget.dart';
 import 'package:invia_hotel_booking/features/favorites/presentation/cubits/favorites_cubit.dart';
@@ -11,11 +10,21 @@ import 'package:invia_hotel_booking/features/hotels/presentation/cubits/hotels_c
 import 'package:invia_hotel_booking/features/hotels/presentation/view/widgets/retry_widget.dart';
 
 @RoutePage()
-class HotelsPage extends StatelessWidget {
+class HotelsPage extends StatefulWidget {
   const HotelsPage({super.key});
 
   @override
+  State<HotelsPage> createState() => _HotelsPageState();
+}
+
+class _HotelsPageState extends State<HotelsPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocBuilder<HotelsCubit, HotelsState>(
       builder: (context, state) {
         switch (state) {
@@ -56,19 +65,12 @@ class HotelsPage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final hotel = state.hotels[index];
 
-                        return BlocSelector<FavoritesCubit, List<Hotel>, bool>(
-                          selector:
-                              (favorites) =>
-                                  favorites.any((h) => h.id == hotel.id),
-                          builder: (context, isFavorite) {
-                            return HotelCard(
-                              hotel: hotel,
-                              isFavorite: isFavorite,
-                              onFavoriteToggle: () {
-                                context.read<FavoritesCubit>().toggleFavorite(
-                                  hotel,
-                                );
-                              },
+                        return HotelCard(
+                          key: ValueKey(hotel.id),
+                          hotel: hotel,
+                          onFavoriteToggle: () {
+                            context.read<FavoritesCubit>().toggleFavorite(
+                              hotel,
                             );
                           },
                         );
