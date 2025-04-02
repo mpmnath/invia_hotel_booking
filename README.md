@@ -274,6 +274,11 @@ To ensure proper functionality, it's recommended to use the same or newer Flutte
 - Used compute to parse large JSON data
 - Implemented efficient favorites toggle with minimal rebuilds
 
+### Flashlight Performance Results
+<a href="https://app.flashlight.dev/report?testRunIds=4ba8fbfe-1700-41fd-8972-3922a6125e5a&anonymous=true" target="_blank">
+  <button>🚀 View Performance Results</button>
+</a>
+
 ### Testing Strategy
 - Comprehensive unit testing for business logic
 - Widget testing for UI components
