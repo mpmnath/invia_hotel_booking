@@ -26,7 +26,6 @@ class HotelCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("HotelCard build");
     return Material(
       color: Colors.transparent,
       child: Padding(
