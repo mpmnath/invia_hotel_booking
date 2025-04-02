@@ -7,6 +7,7 @@ import 'package:invia_hotel_booking/core/constants/values.dart';
 import 'package:invia_hotel_booking/core/extensions/context_ext.dart';
 import 'package:invia_hotel_booking/core/locale/locale_cubit.dart';
 import 'package:invia_hotel_booking/core/router/app_router.dart';
+import 'package:invia_hotel_booking/core/services/deep_link_service.dart';
 import 'package:invia_hotel_booking/core/services/hive_service.dart';
 import 'package:invia_hotel_booking/core/theme/cubit/theme_cubit.dart';
 import 'package:invia_hotel_booking/core/theme/theme.dart';
@@ -36,6 +37,13 @@ void main() async {
 
   // Dependency Injection Setup
   await configureDependencies();
+
+  // Get AppRouter instance
+  final appRouter = getIt<AppRouter>();
+
+  // Initialize DeepLinkService
+  getIt<DeepLinkService>();
+
   runApp(
     MultiBlocProvider(
       providers: [
@@ -44,15 +52,15 @@ void main() async {
         BlocProvider(create: (_) => ThemeCubit()),
         BlocProvider(create: (_) => LocaleCubit()),
       ],
-      child: MyApp(),
+      child: MyApp(appRouter: appRouter),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-
-  final AppRouter _appRouter = getIt<AppRouter>();
+  final AppRouter _appRouter;
+  const MyApp({super.key, required AppRouter appRouter})
+    : _appRouter = appRouter;
 
   @override
   Widget build(BuildContext context) {
